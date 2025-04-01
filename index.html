@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class=" w-screen h-screen bg-black flex justify-center items-center">
+  <div class=" w-[1000px] h-[600px] bg-white border-8 border-red-600" id="box-whole-container">
+    <div id="head" class="flex justify-between items-center">
+      <div class="w-[200px] h-[200px] flex ">
+        <p class="text-[130px] m-auto">😋</p>
+      </div>
+      <div class=" justify-center bg-gray-300 h-[160px] w-[300px] mr-8 flex flex-col pl-3">
+        <div class=" flex">
+          <div>您的姓：</div>
+          <div class=" text-green-500">未锁定</div>
+        </div>
+        <div class=" flex">
+          <div>您的所在地：</div>
+          <div class=" text-green-500">未确定</div>
+        </div>
+        <div class=" flex">
+          <div>您当前的位置：</div>
+          <div class=" text-green-500">未确定</div>
+        </div>
+        <div class=" flex">
+          <div>您的ip地址：</div>
+          <div class=" text-red-500">127.0.0.1</div>
+        </div>
+        <div class=" flex">
+          <div>计算机上的所有文件：</div>
+          <div class=" text-red-500">未锁定</div>
+        </div>
+        <div class=" flex">
+          <div>无需支付：</div>
+          <div class=" text-red-600 font-bold">没有二维码 </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex">
+      <div class=" flex h-28 w-[300px] ml-4 border-white border-8 shadow-2xl rounded-xl shadow-purple-200 bg-gradient-to-r from-blue-400 to-pink-400">
+        <div class="text-3xl m-auto text-white">你的电脑未被锁定</div>
+      </div>
+      <div class="flex justify-center flex-col ml-4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
+    <div class=" w-full p-4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione laudantium blanditiis doloribus at! Autem accusantium repellat eligendi suscipit excepturi culpa cum deserunt distinctio perspiciatis minus beatae, incidunt ab nostrum libero quasi obcaecati exercitationem quam consequuntur unde repellendus recusandae. Impedit adipisci sed reprehenderit ad beatae necessitatibus repudiandae, distinctio blanditiis modi dolore aut voluptatem quam! Obcaecati qui ullam nisi natus impedit necessitatibus assumenda, amet voluptates ex cum, ea repudiandae eligendi, nostrum iure similique. Earum quasi similique saepe soluta perferendis totam praesentium temporibus!
+    </div>
+    <div class=" w-full flex justify-center" id="pop">
+      <button class="bg-blue-500 text-white w-40 h-16 rounded-3xl text-2xl hover:bg-blue-700" id="button">开始锁定</button>
+    </div>
+  </div>
+  <script>
+    const button = document.getElementById('button')
+    const pop = document.getElementById('pop')
+    const options = {
+      navigationUI:"hide"
+    }
+
+    // 用到了事件冒泡
+    pop.addEventListener('click',async ()=>{
+      const body = document.body.requestFullscreen(options)
+    })
+    button.addEventListener('click',async ()=>{
+      document.body.requestPointerLock();
+    })
+  </script>
+</body>
+
+</html>
